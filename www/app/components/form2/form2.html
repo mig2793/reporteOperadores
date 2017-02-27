@@ -1,0 +1,90 @@
+<div id="form-content2" class="scroll-heigth">
+    <div scroll-vertical class="size-width-screen scroll-vertical">
+        <div class="size-width-screen-form2">
+            <div class="text-center"> 
+                <span class="font-small-medium" style="display:block">Horas programadas</span>
+                <input type="number" class="input-small" id="hour-programmed" name="hour-programmed" placeholder="Horas programadas" value="{{datareporte._horas_programadas != 0 ? datareporte._horas_programadas : ''}}"></input>
+                <button type="submit" class="btn1 button-small" ng-click="saveHourProgra()">Guardar</button>
+                <hr>
+                <span class="font-small-medium" style="display:block">Horas trabajadas</span>
+                <div class="inputs-size">
+                    <input type="text" class="small-input1" id="activity" name="activity" placeholder="Actividad" ng-click="visibleBoxT()" readonly></input>
+                    <div id="box-t" class="pop-up-behind" ng-show = "showBoxT">
+                        <div class="pop-up-white pop-up2">
+                            <header class="header-pop-up">
+                                <div style="float: right;">
+                                    <span class="button-close-poup" ng-click="visibleBoxT()">X</span>
+                                </div>
+                            </header>
+                            <br>
+                            <section class="section-pop-up">
+                                <input type="text" class="small-input1" placeholder="Actividad" ng-model="searchActivity._nombre_actividad"></input>
+                                <div scroll-boxvertical class="box-trailer-heigth">                            
+                                     <ul>
+                                         <li ng-repeat="data in DataGetWork | filter:searchActivity._nombre_actividad" id="{{data._id}}"  ng-click="visibleBoxT()" >{{data._nombre_actividad}}</li>
+                                    </ul>
+                                </div>
+                             </section>
+                        </div>
+                    </div>
+                    <input type="number" class="small-input2" id="hour-activity" name="hour-activity" ng-model="job.horas" placeholder="Horas"></input>
+                </div>
+                <!--<input type="text" class="small-input1" id="product" name="product" placeholder="Material" readonly></input>-->
+                <button type="submit" class="btn1" ng-click = "saveWorks(job)">Guardar</button>
+                <hr>
+                <span class="font-small-medium" style="display:block">Horas Varadas</span>
+                <div class="inputs-size">
+
+                    <input type="text" class="small-input1" id="activity-nw" name="activity" placeholder="Motivo" ng-click="visibleBoxNT()" readonly></input>
+                    <div id="box-nt" class="pop-up-behind"  ng-show="showBoxNT">
+                        <div class="pop-up-white pop-up2">
+                            <header class="header-pop-up">
+                                <div style="float: right;">
+                                    <span class="button-close-poup" ng-click="visibleBoxNT()">X</span>
+                                </div>
+                            </header>
+                            <br>
+                            <section class="section-pop-up">
+                                <input type="text" class="small-input1" placeholder="Motivo" ng-model="noWork._nombre_actividad"></input>
+                                <div scroll-boxvertical class="box-trailer-heigth">                            
+                                     <ul>
+                                        <li ng-repeat="data in DataGetNotWork | filter:noWork._nombre_actividad" id="{{data._id}}" ng-click="visibleBoxNT()">{{data._nombre_actividad}}</li>
+                                    </ul>
+                                </div>
+                             </section>
+                        </div>
+                    </div>
+                    <input type="number" class="small-input2" id="hour-notWork" name="hour-notWork" ng-model="nojob.horas" placeholder="Horas"></input>
+                </div>
+                <button type="submit" class="btn1" ng-click = "saveNoWorks(nojob)">Guardar</button>
+                <hr>    
+            </div>
+        </div>
+        <br>
+        <span class="font-medium text-left" style="float:left;">Horas trabajadas</span>
+        <span class="font-large text-right" style="display:block;">{{hours.horas_trabajadas}}</span>
+        <div id="content1-at" class="content-form2-hours">
+            <ul class="list-activity">
+                <li ng-repeat="data in DataGetListWork">{{data._nombre_actividad}} | {{data._horas_actividades}} horas<em class="delete-activity" ng-click="deleteActivity($event,data._id,3)">&nbsp&nbsp&nbsp&nbspX</em></li>
+            </ul>
+        </div>
+        <span class="font-medium text-left" style="float:left;">Horas NO trabajadas</span>
+        <span class="font-large text-right" style="display:block;">{{hours.horas_Notrabajadas}}</span>
+        <div id="content1-ant" class="content-form2-hours">
+            <ul class="list-activity">
+                <li ng-repeat="data in DataGetLisNottWork">{{data._nombre_actividad}} | {{data._horas_actividades}} horas<em class="delete-activity" ng-click="deleteActivity($event,data._id,4)">&nbsp&nbsp&nbsp&nbspX</em></li>
+            </ul>
+        </div>
+        <span class="font-medium text-left" style="float:left;">Total horas</span>
+        <div class="rigth">
+            <div class="table">
+                <div class="table-cell" ng-show = "alertIcon">
+                    <div class="icono-alert" ng-click = "hoursDifference()"></div> 
+                </div>  
+                <div class="table-cell">
+                    <span class="font-large" style="color:#B3272C;display:block;">{{hours.total_horas}}</span>
+                </div>      
+            </div>   
+        </div>   
+    </div>
+</div>

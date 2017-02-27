@@ -1,0 +1,58 @@
+<div id="form-content3" class="scroll-heigth">
+    <div scroll-vertical class="size-width-screen scroll-vertical">
+        <div class="inputs-size">
+
+            <input type="text" id="fail-machine" name="fail-machine" placeholder="Fallo" ng-click="visibleFailM()" readonly></input>
+
+            <div id="box-fail" class="pop-up-behind" ng-show = "BoxFM">
+                <div class="pop-up-white pop-up2">
+                    <header class="header-pop-up">
+                        <div style="float: right;">
+                            <span class="button-close-poup" ng-click="visibleFailM()">X</span>
+                        </div>
+                    </header>
+                    <br>
+                    <section class="section-pop-up">
+                        <input type="text" class="" placeholder="Fallo" ng-model="fail._nombre" id="search-fail"></input>
+                        <div scroll-boxvertical class="box-trailer-heigth">                            
+                             <ul>
+                                <li ng-repeat="activity in FailInicident | filter:fail._nombre" id="{{activity._id}}" ng-click="visibleFailM()">{{activity._nombre}}</li>
+                            </ul>
+                        </div>
+                     </section>
+                </div>
+            </div>
+
+            <input type="text" id="component-machine" name="component-machine" placeholder="Componente" ng-click="visibleComponent()" readonly></input>
+            
+            <div id="box-component" class="pop-up-behind" ng-show = "BoxC">
+                <div class="pop-up-white pop-up2">
+                    <header class="header-pop-up">
+                        <div style="float: right;">
+                            <span class="button-close-poup" ng-click="visibleComponent()">X</span>
+                        </div>
+                    </header>
+                    <br>
+                    <section class="section-pop-up">
+                        <input type="text" class="" placeholder="Componente" ng-model="component._nombre" id="search-component"></input>
+                        <div scroll-boxvertical class="box-trailer-heigth">                            
+                             <ul>
+                                <li ng-repeat="component in component | filter:component._nombre" id="{{component._id}}" ng-click="visibleComponent()">{{component._nombre}}</li>
+                            </ul>
+                        </div>
+                     </section>
+                </div>
+            </div>
+
+            <button class="btn1" ng-click="InsertFailComponent()">Guardar</button><br><br>
+            <hr><br>
+            <span class="font-medium text-left">Incidentes reportados</span><br>
+            <div id="content-list-incidents" class="content-form2-hours">
+                <ul class="list-activity">
+                    <li ng-repeat="data in ReportFail">{{data._nombreFC}} {{data._nombre}} | {{data._severidad}}<em class="delete-activity" ng-click="deleteActivity($event,data._id,2)">&nbsp&nbsp&nbsp&nbspX</em></li>
+                </ul>
+            </div>
+            <button class="btn1 button-absolute"  ng-click="finishTurn()"><span class="icon-close-sesion icon-close-sesion-size"></span>Terminar turno</button><br>
+        </div>
+    </div>
+</div>

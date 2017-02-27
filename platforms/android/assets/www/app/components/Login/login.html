@@ -1,0 +1,14 @@
+<div id="login">
+    <div class="background-mincivil"></div>
+    <div class="logo-mincivil"></div> 
+    <div id="form-logo" class="form-mincivil">
+        <span class="title-login font-adventures text-center" style="display:block;">Reporte diario de operadores</span>
+        <div ng-controller="loginController" class="size-width-screen">
+            <input type="text" id="user" name="user" ng-model="Login.user" placeholder="Usuario"></input>
+            <input type="password" id="password" name="password" ng-model="Login.password" placeholder="Contraseña"></input><br>
+            <button class="btn1" ng-click="validateUser(Login)">Enviar</button>
+            <button class="btn2" ng-click="CapturQR()">Capturar QR operador</button>
+            <!--<button class="btn2" ng-click="register()">Regístrate</button>-->
+        </div>
+    </div>
+</div>

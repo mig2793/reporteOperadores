@@ -1,0 +1,98 @@
+<div id="form-content1" class="scroll-heigth">
+    <div scroll-vertical class="size-width-screen scroll-vertical">
+        <div class="text-center">
+            <button class="btn2" ng-click="CapturQRMaquina()">Capturar QR maquina</button>
+            <label>Operador</label>
+            <input type="text" id="name-operator" name="name-operator" value="{{dataOperator._name}} {{dataOperator._lastname}}" placeholder="Nombre Operario" disabled></input>
+            <div class="inputs-double table">
+                <div class="table-cell">
+                    <label>Fecha</label>
+                    <input type="text" class="small-input" id="date-current" name="date-current" value="{{dataOperator.time}}" placeholder="Fecha" style="width:95% !important" disabled></input>
+                </div>
+                <div class="table-cell">
+                    <label>Cód. Maquina</label>
+                    <input type="text" class="small-input" id="cod-machine" name="cod-machine" placeholder="Código Maquina" value="{{dataMaquina._codMaq}}" style="width:100% !important" disabled></input>
+                </div>
+            </div>
+            <label>Horometro</label>
+            <div class="inputs-double">
+                <input type="number" class="small-input" id="horometro-initial" name="horometro" placeholder="Inicial" value="{{dataMaquina._UltimoHorometro}}"></input>
+                <input type="number" class="small-input" id="horometro-final" name="horometro" placeholder="Final" value="{{datareporte._horometro_final != 0 ? datareporte._horometro_final : ''}}"></input>
+                <label>Kilometros</label>
+               <input type="number" class="small-input" id="kilometro-initial" name="kilometroI" placeholder="Inicial" value="{{datareporte._kilometro_inicial != 0 ? datareporte._kilometro_inicial : ''}}"></input>
+                <input type="number" class="small-input" id="kilometro-final" name="kilometroF" placeholder="Final" value="{{datareporte._kilometro_final != 0 ? datareporte._kilometro_final : ''}}"></input>
+            </div>
+            <label>Proyecto</label>
+            <input type="text" id="projectid" name="project" placeholder="Proyecto" value="{{dataMaquina._proyecto}}" readonly></input> 
+
+            <!--<div id="box-project" class="pop-up-behind" ng-show = "projectBox">
+                <div class="pop-up-white pop-up2">
+                    <header class="header-pop-up">
+                    </header>
+                    <br>
+                    <section class="section-pop-up">
+                        <input type="text" class="" placeholder="Proyecto"  value = "{{dataMaquina._proyecto}}"></input>
+                        <div scroll-boxvertical class="box-trailer-heigth">                            
+                             <ul>ng-model="project._proyecto"
+                                <li ng-repeat="project in projects | filter:project._proyecto" id="{{project._id_proyecto}}" ng-click="visibleProjects()">{{project._proyecto}}</li>
+                            </ul>
+                        </div>
+                     </section>
+                </div>
+            </div>-->
+
+            <label>Frente</label>
+            <input type="text" id="frente" name="front" placeholder="Frente" value="{{datareporte._Frente != '' ? datareport._Frente : ''}}" ng-click="visibleFrentes()" readonly></input>
+
+            <div id="box-Frente" class="pop-up-behind" ng-show = "FrenteBox">
+                <div class="pop-up-white pop-up2">
+                    <header class="header-pop-up">
+                        <div style="float: right;">
+                            <span class="button-close-poup" ng-click="visibleFrentes()">X</span>
+                        </div>
+                    </header>
+                    <br>
+                    <section class="section-pop-up">
+                        <input type="text" class="" placeholder="Frentes" ng-model="frente._Frente"></input>
+                        <div scroll-boxvertical class="box-trailer-heigth">                            
+                             <ul>
+                                <li ng-repeat="frentes in frente | filter:frentes._Frente" id="{{frentes._id_Frente}}" ng-click="visibleFrentes()">{{frentes._Frente}}</li>
+                            </ul>
+                        </div>
+                     </section>
+                </div>
+            </div>
+
+            <br><br>
+            <div id="info-trailer" ng-show="TrailerShow">
+                <hr>
+                <label>Datos trailer</label>
+
+                <div id="box-ct" class="pop-up-behind" ng-show = "showBoxTr">
+                    <div class="pop-up-white pop-up2">
+                        <header class="header-pop-up">
+                            <div style="float: right;">
+                                <span class="button-close-poup" ng-click="visibleBoxTrailers()">X</span>
+                            </div>
+                        </header>
+                        <br>
+                        <section class="section-pop-up">
+                        <input class="cod-trailer-class" type="text" placeholder ="Codigo Trailer" ng-model="codTrailer._codTrailer"></input>
+                            <div scroll-boxvertical class="box-trailer-heigth">                            
+                                 <ul>
+                                    <li ng-repeat="data in dataTrailer  | filter:codTrailer._codTrailer" id="{{data._codTrailer}}" ng-click="visibleBoxTrailers()">{{data._codTrailer}}</li>
+                                </ul>
+                            </div>
+                         </section>
+                    </div>
+                </div>
+                <input type="text" id="trailers" name="codTrailerI" placeholder="Codigo Trailer" value="{{datareporte._codTrailer != 0 ? datareporte._codTrailer: ''}}" ng-click="visibleBoxTrailers()" readonly></input>
+                <div class="inputs-double">
+                    <input type="number" class="small-input" id="km-initialT" name="km-initialT" value="{{datareporte._kilometro_i_trailer != 0 ? datareporte._kilometro_i_trailer: ''}}" placeholder="KM inicial"></input>
+                    <input type="number" class="small-input" id="km-finalT" name="km-finalT" value="{{datareporte._kilometro_f_trailer != 0 ? datareporte._kilometro_f_trailer: ''}}" placeholder="KM final"></input>
+                </div>
+            </div> 
+        </div>
+        <button class="btn1" ng-click="saveOrUpdate()">Guardar</button>
+    </div>
+</div>

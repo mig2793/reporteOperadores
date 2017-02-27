@@ -1,0 +1,57 @@
+<div id="report-day"  class="scroll-heigth">
+    <div scroll-vertical class="size-width-screen scroll-vertical">
+        <br>
+        <span class="font-medium text-center color-red"><b>Reporte del día</b></span>
+        <span class="font-medium text-right"><b>{{datareporte._fecha_inicio}}</b></span>
+        <span class="font-medium"><b>{{dataOperator._name}} {{dataOperator._lastname}}</b></span>
+        <span class="font-medium"><b>Codigo Maquina:</b> {{dataMaquina._codMaq}}</span>
+        <span class="font-medium"><b>Horometro:</b>&nbsp&nbsp <b>inicio:</b> {{datareporte._horometro_inicial}} &nbsp&nbsp <b>fin:</b> {{datareporte._horometro_final}}</span>
+        <span class="font-medium"><b>Kilometros:</b>&nbsp&nbsp <b>inicio:</b> {{datareporte._kilometro_inicial}} &nbsp&nbsp <b>fin:</b> {{datareporte._kilometro_final}}</span>
+        <span class="font-medium"><b>Proyecto:</b> {{dataMaquina._proyecto}}</span>
+        <span class="font-medium"><b>Frente:</b> {{datareporte._Frente}}</span>
+        <span class="font-medium color-red"><b>Actividades del día</b></span>
+        <div>
+            <span class="font-medium">&nbsp&nbsp<b>Horas programadas:</b> {{datareporte._horas_programadas ? datareporte._horas_programadas : 0}}</span>
+            </br>
+            <table>
+                <tr class="color-red">
+                    <td class="width-size-td">Actividad</td>
+                    <td>Horas</td>
+                </tr>
+                <tr class="font-table-small" ng-repeat = "dataA in dataLT">
+                    <td class="width-size-td">{{dataA._nombre_actividad}}</td>
+                    <td>{{dataA._horas_actividades}}</td>
+                </tr>
+                <tr>
+                    <td class="color-red">Total horas</td>
+                    <td>{{TotalH.horasTrabajadas}}</td>
+                </tr>
+            </table>
+            <table>
+                <tr class="color-red">
+                    <td class="width-size-td">NO trabajada</td>
+                    <td>Horas</td>
+                </tr>
+                <tr class="font-table-small" ng-repeat = "dataA in dataLNT">
+                    <td class="width-size-td">{{dataA._nombre_actividad}}</td>
+                    <td>{{dataA._horas_actividades}}</td>
+                </tr>
+                <tr>
+                    <td class="color-red">Total horas</td>
+                    <td>{{TotalH.horasNoTrabajadas}}</td>
+                </tr>
+            </table>
+            <span class="font-medium">&nbsp&nbsp<b>Total horas:</b> {{TotalH.totalHoras}}</span>
+        </div>
+        <span class="font-medium color-red"><b>Incidentes</b></span>
+        <div ng-repeat = "dataFail in dataLF">
+            <span  class="font-medium">&nbsp&nbsp - {{dataFail._nombreFC}} {{dataFail._nombre}}</span>
+        </div>
+        <div id="data-trailer-report" ng-show="TrailerData">
+            <span class="font-medium color-red"><b>Trailer</b></span>
+            <span class="font-medium"><b>Codigo Maquina:</b>  {{datareporte._codTrailer}}</span>
+            <span class="font-medium"><b>Kilometros:</b>&nbsp&nbsp <b>inicio:</b> {{datareporte._kilometro_i_trailer}} &nbsp&nbsp <b>fin:</b> {{datareporte._kilometro_f_trailer}}</span>
+        </div> 
+        
+    </div>
+</div>

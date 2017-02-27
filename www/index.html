@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="report">
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+
+        <!--Libs
+        <link rel="stylesheet" type="text/css" href="assets/lib/jquery-mobile/jquery.mobile-1.4.5.min.css">
+        -->
+        <title>Reporte Operadores</title>
+    </head>
+    <body ng-controller="mainController">
+    
+        <div class="load">
+            <div class="img-load"></div>
+        </div>
+        <div class="Wall"></div>
+        <div ui-view style="height: 100%;overflow:hidden;">
+
+        </div>
+
+        <!--Libs-->
+        <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/lib/jquery-mobile/jquery.mobile.custom.min.js"></script>
+
+        <script src="assets/lib/angular/angular.min.js"></script>
+        <script src="assets/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="assets/lib/angular-modal-service/dst/angular-modal-service.min.js"></script>
+        
+        <!--Cordova-->  
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="assets/lib/ngCordova/dist/ng-cordova.min.js"></script>
+
+        <!--Route-->
+        <script src="app/app.module.js"></script>
+        <script src="app/app.route.js"></script>
+
+        <!--Factorys and directive-->
+        <script src="assets/js/globals.js"></script>
+        <script src="assets/js/directive.js"></script>
+        <script src="assets/js/factorys.js"></script>
+
+        <!--Service-->
+        <script src="app/components/Login/loginService.js"></script>
+        <script src="app/components/form1/databasicService.js"></script>
+        <script src="app/components/form2/tiemposService.js"></script>
+        <script src="app/components/form3/observacionesService.js"></script>
+        <script src="app/components/menu/menuService.js"></script>
+
+        <!--Controllers-->
+        <script src="app/components/Login/loginController.js"></script>
+        <script src="app/components/form1/dataBasicController.js"></script>
+        <script src="app/components/form2/tiemposController.js"></script>
+        <script src="app/components/form3/observacionesController.js"></script>
+        <script src="app/components/menu/menuController.js"></script>
+        <script src="app/components/reportDay/reportDayController.js"></script>
+        <script src="app/components/reportIncident/reportIncidentController.js"></script>
+        <script src="app/components/credits/creditsController.js"></script>
+        <script src="app/components/Register/Register.js"></script>
+
+        <!--Controllers pop-ups-->
+        <script src="app/components/popUps/alertStopMachine/stopMachineController.js"></script>
+        <script src="app/components/popUps/closeSesion/closeSessionController.js"></script>
+        <script src="app/components/popUps/NofindQR/noFindQRController.js"></script>
+        <script src="app/components/popUps/cautionAlert/alertCautionController.js"></script>
+        <script src="app/components/popUps/messageCaution/messageCautionController.js"></script>
+        <script src="app/components/popUps/Nofindrealation/noFindRelationController.js"></script>
+        <script src="app/components/popUps/dataIncomplete/dataIncompleteController.js"></script>
+        <script src="app/components/popUps/OptionalLogin/OptionalLoginController.js"></script>
+        <script src="app/components/popUps/sucessfullyAlert/sucessFullAlertyController.js"></script>
+        <script src="app/components/popUps/hourExtras/differenceHoursController.js"></script>
+        <script src="app/components/popUps/NoRegisterHours/NoRHoursController.js"></script>
+        <script src="app/components/popUps/horometros/horometrosController.js"></script>
+        <script src="app/components/popUps/HourProgrammed/hourProgrammedController.js"></script>
+        <script src="app/components/popUps/errorsave/errorsaveController.js"></script>
+    </body>
+</html>

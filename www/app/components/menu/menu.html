@@ -1,0 +1,88 @@
+<div id="navegacion">
+    <div id="menu-principal">
+        <div class="icono-menu menu-width">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+        </div>
+        <!--<div class="menu-width text-center">
+            <div class="icono-alert"></div>
+            <span class="font-small">Reportar error <br>en la información</soan>
+        </div>-->
+        <div id="button-close-turn" class="menu-width text-right adjust-right">    
+            <span class="font-small" id="name">Hola {{dataOperador._name}}</span>  
+            <div class="rigth">
+                <div class="icon-close-sesion"></div>
+                <span style="line-height: 10px;" class="left font-small" ng-click="finishTurn()">Terminar turno</span>
+            </div>   
+        </div>
+    </div>
+
+    <div id="menu-formularios">
+        <div class="menu-width">
+            <a href="#" ui-sref="home.dateBasics"><span class="font-small2">1. DATOS BASICOS</span></a>
+            <div id="sub-form1" class="focus-form"></div>
+        </div>
+        <div class="menu-width">
+            <a href="#" ui-sref="home.tiempos"><span class="font-small2">2. TIEMPOS</span></a>
+            <div id="sub-form2"></div>
+        </div>
+        <div class="menu-width">
+            <a href="#" ui-sref="home.observaciones"><span class="font-small2">3. OBSERVACIONES</span></a>
+            <div id="sub-form3"></div>
+        </div>
+    </div>
+</div>
+<div id="menu-slide" class="behind-cover">
+    <div id="menu">
+        <div id="profile-menu">
+            <div class="icono-menu menu-width" id="icono-slide-float">
+                <div class="lines"></div>
+                <div class="lines"></div>
+                <div class="lines"></div>
+            </div>
+            <div id="data-profile">
+                <img src="assets/img/icons/33332.png">
+                <span class="font-medium">{{dataOperador._name}}</span>
+                <span class="font-small">Turno activo</span>
+            </div>
+        </div>
+        <div id="menu-content">
+            <ul>
+                <div>
+                    <img src="assets/img/icons/text-file.png" class="img-icons-menu">
+                    <li class="font-small-medium">
+                        <a href="#" ui-sref="home.dateBasics">Reporte diario</a>
+                    </li>
+                </div>
+                <div>
+                    <img src="assets/img/icons/bw-data-template.png" class="img-icons-menu">
+                    <li class="font-small-medium">
+                        <a href="#" ui-sref="home.reporteDia">Resumen del día</a>
+                    </li>
+                </div>
+                <!--<div>
+                    <img src="assets/img/icons/car-copy-141057655684kng.png" class="img-icons-menu">
+                    <li class="font-small-medium">
+                        <a href="#" ui-sref="home.reportIncident">Reportar incidente</a>
+                    </li>
+                </div>-->
+                <div>
+                    <img src="assets/img/icons/power-button-off.png" class="img-icons-menu">
+                    <li class="font-small-medium" ng-click="closeSession()">
+                        <a href="#">Cerrar sesión</a>
+                    </li>
+                </div>
+                <div class="text-right">
+                    <li class="font-small-medium">
+                        <a href="#" ui-sref="home.credits">Creditos</a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="content" ui-view style="height: 100%">
+
+</div>
